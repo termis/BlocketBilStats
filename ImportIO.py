@@ -5,11 +5,11 @@ import os
 import re
 
 IOimportPathJson = "~\\PycharmProjects\\BlocketBilStats\\json\\20160612.json"
-#with open("C:\\Users\\SERAPALISG\\PycharmProjects\\BlocketBilStats\\json\\20160612.json", encoding='utf8') as data_file:
+#with open("C:\\Users\\user\\PycharmProjects\\BlocketBilStats\\json\\20160612.json", encoding='utf8') as data_file:
 with open(os.path.expanduser(IOimportPathJson), encoding='utf8') as data_file:
     data = json.load(data_file)
-    data = data['result']['extractorData']['data'] # data holds list
-    data = data[0]['group'][0:] # list with all needed info
+    data = data['result']['extractorData']['data']  # data holds list
+    data = data[0]['group'][0:]  # list with all needed info
     # data_keys = data['result']['extractorData'].keys()
 
 
@@ -27,13 +27,3 @@ for x in data:
         price = re.sub(r"[^0-9]", "", price)
         pprint(int(price))
 
-
-#x = data
-#pprint(x)
-
-
-# for x in data:
-#     for z in x['group']:
-#         for y in z['Listprice number']:
-#             #pprint(y['text'])
-#             pass
